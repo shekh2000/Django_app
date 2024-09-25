@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;         /* Stack children (header, main, footer) vertically */
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    display: flex;                
+    justify-content: space-between; 
+    align-items: center;          
+    background-color: #333;       
+    color: white;                 
+    padding: 10px 20px;          
+}
+
+.nav_links {
+    list-style: none;             
+    display: flex;                
+    margin: 0;                   
+    padding: 0;                  
+}
+
+.nav_links li {
+    margin-left: 20px;           
+}
+
+.nav_links a {
+    color: white;                 
+    text-decoration: none;        
+}
+
+.nav_links a:hover {
+    text-decoration: underline;  
+}
+
+.main-content {
+    flex: 1;                        /* Allow the main content to grow and take available space */
+    display: flex;                  /* Use flexbox for layout */
+    justify-content: space-between; /* Space between content and form */
+    /* background-color: goldenrod; */
+    overflow: hidden; 
+}
+
+.content-area {
+    flex: 2; /* Content area takes up more space */
+    padding-top: 150px;
+    padding-right: 20px; /* Add space between content and form */
+    display: flex;
+    flex-direction: column; /* Stack time and date vertically */
+    align-items: center; /* Center-align items */
+    /* background-color: green; */
+}
+
+.current-time {
+    font-size: 12em; /* Large font size for the time */
+    /* font-weight: bold;  */
+    transform: scaleY(2.0); /* Scale vertically */
+    transform-origin: bottom; /* Anchor the scale transformation from the bottom */
+    /* margin-top: 30px; */
+    /* background-color: yellow; */
+    /* margin: 0;  */
+}
+
+.current-date {
+    font-size: 3em; /* Smaller font size for the date */
+    color: gray; /* Optional: change the color for the date */
+    margin-top: -20px;
+    /* background-color: red; */
+}
+
+.form-area {
+    flex: 1;
+    max-width: 250px;                     
+    background-color: #f4f4f4;   /* Light background for the form */
+    padding: 20px;               
+    border-radius: 5px;          
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+}
+
+footer {
+    background-color: #333;
+    /* background-color: yellow; */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.contact {
+    padding-right: 30px;
+}

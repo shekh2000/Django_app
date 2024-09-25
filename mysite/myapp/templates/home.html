@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>INTERNSHIP ASSIGNMENT</h1>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="content-area">
+            <p class="current-time" id="current-time">{{ current_time }}</p>
+            <p class="current-date" id="current-date"></p>
+        </div>
+        <div class="form-area">
+            <h2>USER</h2>
+            <form action="/submit" method="post">
+                {% csrf_token %}
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+        
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+        
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </main>
+       
+
+    <footer>
+        <p>
+            <span class="contact">Contact: shekhawatdeepak13@gmail.com</span>
+            <span class="phone">Phone: &#9742; +91-8698184594</span>
+        </p>
+    </footer>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

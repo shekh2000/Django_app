@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact List</title>
+    <title>User List</title>
 </head>
 <body>
-    <h1>Submitted Contacts</h1>
+    <h1>Submitted Users</h1>
     <ul>
-        {% for contact in contacts %}
-        <li>{{ contact.name }} - {{ contact.email }}</li>
+        {% for user in users %}
+        <li>{{ user.name }} - {{ user.email }}</li>
         {% endfor %}
     </ul>
 </body>

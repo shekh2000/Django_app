@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from pytz import timezone
 from datetime import datetime
-from .models import Contact
+from .models import User
 
 def home(request):
     current_time = datetime.now(timezone("Asia/Kolkata")).strftime('%Y/%m/%d, %I:%M:%S %p')
@@ -13,10 +13,10 @@ def form_submit(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
-        contact = Contact(name=name, email=email)
-        contact.save()
+        user = User(name=name, email=email)
+        user.save()
         return render(request, 'form_response.html', {'name': name, 'email': email})
     
-def contacts(request):
-    contacts_list = Contact.objects.all()
-    return render(request, 'contacts.html', {'contacts': contacts_list})
+def users(request):
+    user_list = User.objects.all()
+    return render(request, 'users.html', {'users': user_list})
